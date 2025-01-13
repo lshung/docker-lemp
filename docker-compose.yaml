@@ -1,0 +1,15 @@
+services:
+  lemp-ctn:
+    build: .
+    image: lemp-img
+    container_name: lemp-ctn
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3306:3306"
+      - "6379:6379"
+      - "11211:11211"
+    volumes:
+      - ./www:/var/www/html
+      - ./components/nginx/conf.d:/etc/nginx/conf.d
+    command: sh -c "service nginx start && service php8.3-fpm start && service mariadb start && service redis-server start && service memcached start && tail -f /dev/null"
