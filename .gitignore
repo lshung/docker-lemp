@@ -1,0 +1,6 @@
+/www/*
+!/www/index.php
+/components/nginx/conf.d/*
+!/components/nginx/conf.d/default.conf
+/components/mariadb/data/*
+!/components/mariadb/data/.gitkeep
